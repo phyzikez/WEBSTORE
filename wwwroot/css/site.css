@@ -1,0 +1,288 @@
+﻿
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    background-color: #e5e5e5;
+}
+
+.line {
+    border-top-color: #d9cdbe;
+    border-top-width: 3px;
+}
+
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.carousel-caption p {
+    font-size: 20px;
+    line-height: 1.4;
+}
+
+.carousel-inner .item img[src$=".jpg"] {
+    max-height: 650px;
+    width: 100%;
+}
+
+#qrCode {
+    margin: 15px;
+}
+
+@media screen and (max-width: 767px) {
+    /* Hide captions */
+    .carousel-caption {
+        display: none;
+    }
+}
+
+#overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 50px;
+    color: white;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+}
+
+.overul {
+    position: absolute;
+    left: 50%;
+    margin-top: 50px;
+    margin-left: -126px;
+}
+
+.btn-1 {
+    padding: 15px;
+    margin-bottom: 20px;
+    background-color: goldenrod;
+    border-radius: 10px;
+    text-transform: uppercase;
+    text-align: center;
+    list-style-type: none;
+    box-shadow: rgb(38 38 38 / 85%) -3px -3px inset;
+}
+
+.btn-1:hover {
+    background-color: orangered;
+    box-shadow: rgb(38 38 38 / 85%) 3px 3px inset;
+}
+
+.btn-1 > a{
+    color: white;
+    font-size: 20px;
+}
+    
+#overlayMenu {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(38 38 38 / 93%);
+    z-index: 11111;
+    cursor: pointer;
+}
+
+.menubar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 15px;
+    background-color: goldenrod;
+    cursor: pointer;
+    border-bottom: 3px solid rgb(38 38 38 / 73%);
+}
+
+.menubar > span {
+    position: absolute;
+    left: 50%;
+    background-color: goldenrod;
+    width: auto;
+    height: auto;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 25px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 4px;
+    padding-top: 20px;
+    border-radius: 5px;
+    margin-left: -40px;
+    margin-top: -20px;
+    border: 3px solid rgb(38 38 38 / 73%);
+}
+
+.menubar > span:hover {
+    animation-name: anim;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-delay: 0.1s;
+    animation-iteration-count: 1;
+    animation-direction: alternate;
+}
+
+@keyframes anim {
+    0% {
+        margin-top: -10px;
+    }
+
+    100% {
+        margin-top: -20px;
+    }
+}
+
+.mainmenu {
+    margin-bottom: 40px;
+}
+
+.tcollapsible {
+    background-color: #777;
+    color: white;
+    cursor: pointer;
+    padding: 12px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+}
+
+.tactive, .tcollapsible:hover {
+    background-color: #555;
+}
+
+.tcontent {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    background-color: #f1f1f1;
+}
+
+.star {
+    color: #e77b1e;
+}
+
+.rowProd {
+    display: -webkit-flex;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+.column-2 {
+    flex: 0 0 50%;
+}
+
+.column-3 {
+    flex: 0 0 33%;
+}
+
+.ourContacts {
+    background-color: #ffdb77;
+    padding: 20px;
+    height: 400px;
+}
+
+.map {
+    height: 400px;
+}
+
+#myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+}
+
+.about {
+    background-color: #ffdb77;
+    padding: 20px;
+}
+
+.desc {
+    padding: 20px;
+    text-align: justify;
+}
+
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 2px 22px 2px;
+    display: inline-block;
+    border: none;
+    background: #e3e3e3;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+    background-color: #939393;
+    outline: none;
+}
+
+.cancelbtn {
+    padding: 14px 20px;
+    background-color: #ff5757;
+}
+
+.signupbtn {
+    padding: 14px 20px;
+    background-color: palegreen;
+}
+
+.cancelbtn, .signupbtn {
+    float: left;
+    width: 50%;
+}
+
+@media screen and (max-width: 300px) {
+    .cancelbtn, .signupbtn {
+        width: 100%;
+    }
+}
+
+log {
+    background-color: #ffdb77;
+    padding: 20px;
+}
+
+#admindb {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#admindb td, #admindb th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    align-content: center;
+}
+
+#admindb tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#admindb tr:hover {
+    background-color: #ddd;
+}
+
+#admindb th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #545454;
+    color: white;
+}
+
+.row-3 {
+    display: -webkit-flex;
+    display: flex;
+    flex-wrap: wrap;
+}
