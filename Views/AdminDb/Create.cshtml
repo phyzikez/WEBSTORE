@@ -1,0 +1,26 @@
+﻿@model WebApplication117.Models.ProductModel
+<h1>Add new product</h1>
+<hr class="line" />
+<div class="log about">
+    <form asp-action="Create">
+        <label asp-for="Id">Id:</label>
+        <input asp-for="Id" /><br />
+        <label asp-for="ModelName">Name:</label>
+        <input asp-for="ModelName" /><br />
+        <label asp-for="Brand">Brand:</label>
+        <input asp-for="Brand" /><br />
+        <label asp-for="Price">Price:</label>
+        <input asp-for="Price" /><br />
+        <label asp-for="Rate">Rate:</label>
+        <input asp-for="Rate" /><br />
+        <label asp-for="Description">Description:</label>
+        <input asp-for="Description" /><br />
+        <label asp-for="Hot">Hot:</label>
+        <input asp-for="Hot" /><br />
+        <label asp-for="MainPhoto">MainPhoto:</label>
+        <input asp-for="MainPhoto" /><br />
+        <label asp-for="Category">Category:</label>
+        <input asp-for="Category" /><br />
+        <input type="submit" value="Create" class="btn"/>
+    </form>
+</div>

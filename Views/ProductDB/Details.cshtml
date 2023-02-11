@@ -1,0 +1,105 @@
+﻿@model WebApplication117.Models.ProductInfo
+
+<h1>PRODUCT DETAIL INFORMATION</h1>
+<hr class="line"/>
+<div class="rowProd">
+    <div id="colMain" class="column-2">
+        <span>@Html.DisplayNameFor(Model => Model.Prod.ModelName) :</span>
+        <h2>@Model.Prod.ModelName</h2>
+        <span>@Html.DisplayNameFor(Model => Model.Prod.Category) :</span>
+        <h2>@Model.Prod.Category</h2>
+        <span>@Html.DisplayNameFor(Model => Model.Prod.Brand) :</span>
+        <h2>@Model.Prod.Brand</h2>
+        <span>@Html.DisplayNameFor(Model => Model.Prod.Price) :</span>
+        <h2>@Model.Prod.Price</h2>
+        @if (Model.Prod.Hot == true)
+        {
+            <div><img src="/images/hot.png" style="width: 200px" alt="hot" /></div>
+            <br />
+        }
+        <span>@Html.DisplayNameFor(Model => Model.Prod.Rate) :</span>
+        <h2>
+            @for (int i = 0; i < Model.Prod.Rate; i++)
+            {<span class="star">&#9733;</span>}
+            @for (int i = 0; i < 10 - Model.Prod.Rate; i++)
+            {<span>&#9733;</span>}
+        </h2>
+        <span>@Html.DisplayNameFor(Model => Model.Prod.Description) :</span>
+        <h2>@Model.Prod.Description</h2>
+        <span>@Html.DisplayNameFor(Model => Model.Photos) :</span>
+
+        <div class="trow">
+            @{int N = 1; }
+            @{int totalCount = Model.Photos.Count(); }
+
+            @foreach (var photo in Model.Photos)
+            {
+                <div class="tcolumn">
+                    <img src="/images/@photo.Source" style="width: 50px; height: 50px" onclick="openModal();currentSlide(@(N++))" class="hover-shadow cursor">
+                </div>
+            }
+        </div>
+
+        <div id="myModal" class="modal">
+            <span class="close cursor" onclick="closeModal()">&times;</span>
+
+            <div class="modal-content">
+                @{N = 1;}
+                @foreach (var photo in Model.Photos)
+                {
+                    <div class="mySlides">
+                        <div class="numbertext">@(N++) / @totalCount</div>
+                        <img src="/images/@photo.Source" style="width:100%">
+                    </div>
+                }
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+
+                @{N = 1;}
+                @foreach (var photo in Model.Photos)
+                {
+                    <div class="tcolumn">
+                        <img class="demo cursor" src="/images/@photo.Source" style="width: 50px; height: 50px" onclick="currentSlide(@(N++))" alt="PHOTO">
+                    </div>
+                }
+
+            </div>
+        </div>
+    </div>
+
+    <div id="colCalls" class="column-2">
+        <h2>Callbacks:</h2>
+        @foreach (var calls in Model.Callbacks)
+        {
+            if (calls.IdProduct == Model.Prod.Id)
+            {
+                @* There's better to show user's name (the one additional column is required in callback-table)'*@
+                <p type="button" class="tcollapsible">Callback from User-@calls.IdUser</p>
+                <div class="tcontent">
+                    <p>@calls.Message</p>
+                </div>
+            }
+        }
+    </div>
+</div>
+<hr class="line">
+
+<script>
+    var coll = document.getElementsByClassName("tcollapsible");
+    var oi;
+
+    for (oi = 0; oi < coll.length; oi++) {
+        coll[oi].addEventListener("click", function () {
+            this.classList.toggle("tactive");
+            var content = this.nextElementSibling;
+            if (content.style.display === "block") {
+                content.style.display = "none";
+            } else {
+                content.style.display = "block";
+            }
+        });
+    }
+
+    
+</script>

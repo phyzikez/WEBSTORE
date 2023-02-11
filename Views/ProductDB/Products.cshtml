@@ -1,0 +1,42 @@
+﻿@model IEnumerable<WebApplication117.Models.ProductModel>
+
+@* It's nice to implement pagination *@
+
+<div class="main">
+    <h1>OUR PRODUCT GALLERY</h1>
+    <hr class="line">
+    <div id="myBtnContainer">
+        <button class="btn active" onclick="filterSelection('all')"> All</button>
+        <button class="btn" onclick="filterSelection('Monitor')"> Monitor</button>
+        <button class="btn" onclick="filterSelection('KeyBoard')"> KeyBoard</button>
+        <button class="btn" onclick="filterSelection('Mouse')"> Mouse</button>
+        <button class="btn" onclick="filterSelection('PowerBank')"> PowerBank</button>
+    </div>
+    <hr>
+    <!-- Portfolio Gallery Grid -->
+    <div class="row">
+        @foreach (var pr in Model)
+        {
+            <div class="column @pr.Category">
+                <div class="content">
+                    <img class="image" src="/images/@pr.MainPhoto" alt="pic" style="width:100%">
+                    <h4>@pr.Brand @pr.ModelName</h4>
+                    <p>@pr.Category</p>
+                    <span>@pr.Price</span>
+                    @if (pr.Hot == true)
+                    { <span><img src="/images/hot.png" style="width: 40px; margin-top: -10px;" alt="hot" /></span> }
+                </div>
+                <div class="middle">
+                    <div class="text"><a asp-action="Details" asp-route-id="@pr.Id">Details</a></div>
+                    <hr />
+                    <div class="text"><a href="#">Buy</a></div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+<hr class="line">
+
+<script>
+    filterSelection("all")
+</script>

@@ -1,0 +1,40 @@
+﻿@model IEnumerable<WebApplication117.Models.ProductModel>
+
+<div class="main">
+
+    <h2>Admin Database Access</h2>
+    <hr class="line" />
+
+    <a asp-action="Create" class="btn" style="margin-bottom: 10px;">Add new item</a>
+    <table border="1" id="admindb">
+        <tr>
+            <th>Id</th>
+            <th>IMAGE</th>
+            <th>Model Name</th>
+            <th>Brand</th>
+            <th>Category</th>
+            <th>Hot</th>
+            <th>Rate</th>
+            <th width="300">Description</th>
+            <th>Price</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+        @foreach (var pr in Model)
+        {
+            <tr>
+                <td>@pr.Id</td>
+                <td><img width="200" src="/images/@pr.MainPhoto" alt="Alternate Text" /></td>
+                <td>@pr.ModelName</td>
+                <td>@pr.Brand</td>
+                <td>@pr.Category</td>
+                <td>@pr.Hot</td>
+                <td>@pr.Rate</td>
+                <td width="200">@pr.Description</td>
+                <td>@pr.Price</td>
+                <td><a asp-action="Edit" asp-route-id="@pr.Id" class="btn">Edit</a></td>
+                <td><a asp-action="Delete" asp-route-id="@pr.Id" class="btn">Delete</a></td>
+            </tr>
+        }
+    </table>
+</div>

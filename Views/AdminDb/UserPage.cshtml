@@ -1,0 +1,19 @@
+﻿@model WebApplication117.Models.UserInfo
+@* As callback data here might be also user offer data (one more database table required) *@
+@* Avatars, names etc. also could be added here *@
+    <div class="log about">
+        <h1>This is your page, @Model.User.Login</h1>
+        <hr class="line"/>
+        <h3>Your email: @Model.User.Email</h3>
+        <h3>Your callbacks:</h3>
+        @if (Model.Callbacks != null)
+        {
+            @foreach (var ofr in Model.Callbacks)
+            {
+                if (Model.User.Id == ofr.IdUser)
+                {
+                    <h3>Product Id: @ofr.IdProduct | Your message: @ofr.Message</h3>
+                }
+            }
+        }
+    </div>
