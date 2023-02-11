@@ -1,0 +1,11 @@
+# WEBSTORE
+- MVC-Pattern
+- Using DB tables
+- Log-In/Sign-Up
+- Validation
+- Admin Page
+- Using JS
+- Using Cookies
+- Adding/Updating/Removing New Items Into DB
+- Loggering
+- Using Filters/Attributes
